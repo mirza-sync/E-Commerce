@@ -31,8 +31,21 @@ async function getUserData() {
   }
 }
 
+async function getProductData() {
+  const [activeCount, inactiveCount] = await Promise.all([
+    db.product.count({ where: { isAvailableForPurchase: true } }),
+    db.product.count({ where: { isAvailableForPurchase: false } })
+  ])
+
+  return { activeCount, inactiveCount }
+}
+
 export default async function DashboardPage() {
-  const [salesData, userData] = await Promise.all([getSalesData(), getUserData()])
+  const [salesData, userData, productData] = await Promise.all([
+    getSalesData(),
+    getUserData(),
+    getProductData()
+  ])
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -45,6 +58,11 @@ export default async function DashboardPage() {
         title="Customers"
         subtitle={`${formatCurrency(userData.averageValuerPerUser)} Average Value`}
         body={formatNumber(userData.userCount)}
+      />
+      <DashboardCard
+        title="Active Products"
+        subtitle={`${formatNumber(productData.inactiveCount)} Inactive`}
+        body={formatNumber(productData.activeCount)}
       />
     </div>
   )
