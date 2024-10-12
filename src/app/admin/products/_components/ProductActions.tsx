@@ -33,6 +33,7 @@ export function DeleteDropdownItem({ id, disabled }: DeleteDropdownItemProps) {
   const [isPending, startTransition] = useTransition()
   return (
     <DropdownMenuItem
+      variant="destructive"
       disabled={disabled || isPending}
       onClick={() => {
         startTransition(async () => {
