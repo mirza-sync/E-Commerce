@@ -14,3 +14,7 @@ Full stack e-commerce webapp, with minimal amount of code. Built with Next.js 14
 Also `PrismaClient` data type: `any`.
 
   - Updating `prisma` and `@prisma/client` to the latest version fixed the issue tho.
+
+- The product card skeleton looks sooo goooooood 🤤
+
+- Wait, I can press `Windows` + `.`, then selecting a GIF to put in here? That's soooo coooooool ![drool](image-1.png).
