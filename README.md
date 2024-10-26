@@ -17,4 +17,5 @@ Also `PrismaClient` data type: `any`.
 
 - The product card skeleton looks sooo goooooood 🤤
 
-- Wait, I can press `Windows` + `.`, then selecting a GIF to put in here? That's soooo coooooool ![drool](image-1.png).
+- Wait, I can press `Windows` + `.`, then selecting a GIF to put in here? That's soooo coooooool ![drool](./docs/drool.png).
+  - The GIF not playing tho. Windows turned the GIF into an image, and put the image at the root of the repo. Pretty interesting.
