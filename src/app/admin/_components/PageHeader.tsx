@@ -1,6 +1,3 @@
-import { Button } from "@/components/ui/button"
-import { Table, TableBody, TableHead, TableRow } from "@/components/ui/table"
-import Link from "next/link"
 import { ReactNode } from "react"
 
 type PageHeaderProps = {
