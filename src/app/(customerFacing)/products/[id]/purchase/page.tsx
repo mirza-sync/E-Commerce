@@ -1,6 +1,7 @@
 import db from '@/db';
 import { notFound } from 'next/navigation';
 import Stripe from 'stripe';
+import { CheckoutForm } from './_components/CheckoutForm';
 
 export default async function PurchasePage({ params: { id } }: { params: { id: string } }) {
   const product = await db.product.findUnique({ where: { id } });
@@ -17,5 +18,5 @@ export default async function PurchasePage({ params: { id } }: { params: { id: s
     throw Error('Stripe failed to create payment intent');
   }
 
-  return <div>Purchase page</div>;
+  return <CheckoutForm product={product} clientSecret={paymentIntent.client_secret} />;
 }
